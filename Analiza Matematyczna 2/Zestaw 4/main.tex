@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage[a4paper, margin={1in, 1in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{tasks}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sgn}{sgn}
+
+\let\arctan\relax
+\DeclareMathOperator{\arctan}{arctg}
+\let\tan\relax
+\DeclareMathOperator{\tan}{tg}
+
+% Dodatkowe deklaracje:
+
+% Koniec dodatkowych deklaracji
+
+\pagestyle{fancy}
+
+\lhead{Analiza Matematyczna 2; 2020/2021}
+% Tutaj proszę uzupełnić imię i nazwisko
+\rhead{Wojciech Szlosek}
+
+\begin{document}
+
+% Początek każdego zadania należy oznaczać w następujący sposób: 
+% \section*{Zadanie [nr_zadania]}
+% lub
+% \section*{Zadanie [nr_zadania][podpunkt]}
+
+\section*{Zadanie 2c}
+$$h(x,y,z) = \sqrt{x}+\sqrt{y-1}+\sqrt{z-2}$$
+Z łatwością sprawdzamy, że dziedzina funkcji $h$ jest następująca: 
+$$D_h = \{ (x,y,z) \in R^3: x \geq 0, y \geq 1, z \geq 2 \}$$
+
+\begin{wrapfigure}{}{\textwidth}
+\begin{center}
+\vspace{-5pt}
+\includegraphics[width=0.30\textwidth]k
+\end{center}
+\vspace{-10pt}
+\vspace{-10pt}
+\end{wrapfigure}
+
+
+
+\section*{Zadanie 5g}
+$$\lim_{(x,y)\to (0,0)} \frac{x^4+y^4}{x^2+y}$$
+Rozważmy dwa ciągi $(x_n^{'}, y_n^{'}), (x_n^{''}, y_n^{''})$ zbieżne do (0,0), takie, że wartości funkcji $f(x,y) = \frac{x^4+y^4}{x^2+y}$ odpowiadające wyrazom tych ciągów są zbieżne do różnych granic. Niech więc $(x_n^{'}, y_n^{'}) = (0, \frac{1}{n})$ i $(x_n^{''}, y_n^{''}) = (\frac{\sqrt{n+1}}{n},\frac{-1}{n})$. Wtedy:
+$$\lim_{n \to \infty} \frac{(x_n^{'})^4 +(y_n^{'})^4 }{(x_n^{'})^2 + y_n^{'}} = \lim_{n \to \infty} \frac{0+\frac{1}{n^4}}{0+\frac{1}{n}} = 0$$
+$$\lim_{n \to \infty} \frac{(x_n^{''})^4 +(y_n^{''})^4 }{(x_n^{''})^2 + y_n^{''}} = \lim_{n \to \infty} \frac{\frac{(n+1)^2}{n^4}+\frac{1}{n^4}}{\frac{n+1}{n^2}-\frac{n}{n^2}} = \lim_{n \to \infty} \frac{n^2+2n+2}{n^2} = 1$$
+Zaiste, otrzymaliśmy różne granice, więc granica rozważana w zadaniu nie istnieje.
+
+
+\section*{Zadanie 6a}
+$$f(x,y)=\bigg\{\begin{array}{rl}
+\sqrt{1-x^2-y^2} & \textrm{dla $x^2+y^2 \leq 1$} \\ 0 & \textrm{dla $x^2 + y^2 > 1$} \end{array}$$
+Oczywistym jest ciągłość funkcji poza przypadkiem granicznym (jako złożenie funkcji ciągłych), budzącym wątpliwości. Z definicji (podręcznik, 3.4.1), mamy, że funkcja jest ciągła w punkcie $(x_0,y_0)$[$(x_0,y_0) \in R^2$ i funkcja określona na otoczeniu $O(x_0,y_0)$] wtedy i tylko wtedy, gdy $\lim_{(x,y)\to (x_0,y_0)} f(x,y) = f(x_0,y_0)$. \\
+Określmy dwa "przypadki", dwie półpłaszczyzny: gdy $x^2+y^2 \leq 1 (ozn. \pi_{-})$, gdy $x^2+y^2 > 1 ( ozn. \pi_{+})$.
+$$\lim_{(x,y)[\in \pi_{-}]\to (x_0,y_0)} f(x,y) = \sqrt{1-(x_0)^2 - (y_0)^2} = f(x_0,y_0)$$
+$$\lim_{(x,y)[\in \pi_{+}]\to (x_0,y_0)} f(x,y) = 0 = f(x_0,y_0)$$
+Zatem, wraz z wnioskiem o ciągłości reszty punktów, można stwierdzić, że funkcja jest ciągła. \\ 
+Odp.: $R^2$
+
+\end{document}

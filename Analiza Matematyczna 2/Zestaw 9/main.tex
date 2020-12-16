@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[a4paper, margin={1in, 1in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{tasks}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sgn}{sgn}
+
+\let\arctan\relax
+\DeclareMathOperator{\arctan}{arctg}
+\let\tan\relax
+\DeclareMathOperator{\tan}{tg}
+
+% Dodatkowe deklaracje:
+
+% Koniec dodatkowych deklaracji
+
+\pagestyle{fancy}
+
+\lhead{Analiza Matematyczna 2; 2020/2021}
+% Tutaj proszę uzupełnić imię i nazwisko
+\rhead{Wojciech Szlosek}
+
+\begin{document}
+
+\section*{Zadanie 1a}
+
+$$\int \int_{R} \frac{dx \ dy}{(x+y+1)^3}; \ \ \ R = [0,2] \ x \ [0,1]$$
+$$\int \int_{R} \frac{dx \ dy}{(x+y+1)^3} = \int^{2}_{0} dx \int^{1}_{0} \frac{1}{(x+y+1)^3} dy = \int^{2}_{0} [\frac{-1}{2(x+y+1)^2}]^{1}_{0} dx = \int_{0}^{2} [\frac{-1}{2(x+2)^2}+ \frac{1}{2(x+1)^2}] dx = $$
+$$= [\frac{-1}{2(x^2+3x+2)}]^{2}_{0} = \frac{5}{24}$$
+
+\section*{Zadanie 3a}
+
+$$x^2 + y = 2; \ \ \ y^3 = x^2$$
+Rozwiążemy układ równań: $x^2 +y = 2$ i $y^3 = x^2$. Stąd mamy dwa "przypadki": $x = -1, y = 1$ lub $x = 1, y = 1$.
+Dalej stwierdzamy:
+$$-1 \leq x \leq 1 \ \ \ \sqrt[3]{x^2} \leq y \leq 2 - x^2$$
+Stąd:
+$$\int \int_{D} f(x,y) \ dx \ dy = \int_{-1}^{1} dx \int_{\sqrt[3]{x^2}}^{2-x^2} f(x,y) \ dy$$
+
+\section*{Zadanie 4c}
+
+$$\int \int_D |x-y| dx \ dy \ \ \ \ D = \{ (x,y) \in R^2 : x \geq 0, 0 \leq y \leq 3-2x \}$$
+
+Rozważmy poniższy rysunek. Przedstawia on obszar zadany przez $D$. Dodatkowo została dodana funkcja $y = x$ oraz prosta $x = 1$. Dzięki temu podzieliliśmy obszar na trzy "podobszary": I, II, III. \\
+
+\begin{wrapfigure}{}{\textwidth}
+\begin{center}
+\vspace{-5pt}
+\includegraphics[width=0.30\textwidth]k
+\end{center}
+\vspace{-10pt}
+\vspace{-10pt}
+\end{wrapfigure}
+\hfill \break
+Zauważmy (z wykresu możemy odczytać wszystkie interesujące nas współrzędne), że w obszarze oznaczonym przez I: max X = 1, max Y = 3. Skoro $1-3 < 0$, to musimy zmienić znak na przeciwny. Rozważając pozostałe dwa obszary, taka różnica jest nieujemna, stąd zostawiamy znak bez zmiany. \\ \\
+Mamy więc:
+$$I: \int_0^1 \Big(\int_x^{-2x+3} (-x+y)dy\Big)dx = \int_0^1 \Big[ \frac{y^2}{2}-xy\Big]_{x}^{-2x+3} dx = \int_0^1 \frac{9}{2}(x-1)^2 dx = \Big[\frac{9}{2}(\frac{x^3}{3}-x^2+x)\Big]_0^1 = \frac{3}{2}$$
+
+$$II: \int_0^1 \Big(\int_0^{x} (x-y)dy\Big)dx = \int_0^1 \Big[ xy-\frac{y^2}{2}\Big]_{0}^{x} dx = \int_0^1 (x^2-\frac{x^2}{2}) dx = \Big[\frac{x^3}{3} - \frac{x^3}{6}\Big]_0^1 =\frac{1}{3}-\frac{1}{6} = \frac{1}{6}$$
+
+$$III: \int_1^{\frac{3}{2}} \Big(\int_0^{-2x+3} (x-y)dy\Big)dx = \int_1^{\frac{3}{2}} \Big[ xy-\frac{y^2}{2}\Big]_{0}^{-2x+3} dx = \int_1^{\frac{3}{2}} (-2x^2+3x-\frac{(-2x+3)^2}{2}) dx = $$
+$$= \Big[\frac{-x^4+3x^2}{2} + \frac{(-2x+3)^3}{12}\Big]_1^{\frac{3}{2}} = \frac{5}{24}$$ \\
+Odpowiedź: $I + II + III = \frac{3}{2} + \frac{1}{6} + \frac{5}{24} = \frac{15}{8}$
+
+\end{document}

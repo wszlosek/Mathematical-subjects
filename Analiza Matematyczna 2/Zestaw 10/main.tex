@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage[a4paper, margin={1in, 1in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{tasks}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sgn}{sgn}
+
+\let\arctan\relax
+\DeclareMathOperator{\arctan}{arctg}
+\let\tan\relax
+\DeclareMathOperator{\tan}{tg}
+
+% Dodatkowe deklaracje:
+
+% Koniec dodatkowych deklaracji
+
+\pagestyle{fancy}
+
+\lhead{Analiza Matematyczna 2; 2020/2021}
+% Tutaj proszę uzupełnić imię i nazwisko
+\rhead{Wojciech Szlosek}
+
+\begin{document}
+
+\section*{Zadanie 1c}
+
+$$\int_{0}^{4} dx \int_{\sqrt{4x-x^2}}^{2\sqrt{x}} f(x,y) \ dy$$
+Z tego widzimy:
+$$0 \leq x \leq 3 \ \ \ \ \sqrt{4x-x^2} \leq y \leq 2\sqrt{x}$$ \\
+Naszkicujmy zatem obszar, który jest ograniczony prostymi $x = 0$, $x = 4$ oraz funkcjami $y = 2\sqrt{x}$, $y = \sqrt{4x-x^2}$. Zauważmy, że ostatnią funkcję y możemy przerobić na $y^2 = 4x-x^2 \implies (x-2)^2 + y^2 = 4$, co oznacza okrąg o środku w punkcie (2,0) i promieniu 2. \\ \\
+Poniżej znajduje się rysunek. Dany obszar (zaznaczony ciemniejszym kolorem) podzielono dodatkowo na trzy "podobszary".
+
+\begin{wrapfigure}{}{\textwidth}
+\begin{center}
+\vspace{-5pt}
+\includegraphics[width=0.30\textwidth]k
+\end{center}
+\vspace{-10pt}
+\vspace{-10pt}
+\end{wrapfigure}
+\hfill \break
+Rozważmy z rysunku, zauważając między innymi, że połowa okręgu tworzy parabolę - funkcję o wzorze $y = \frac{1}{4}y^2$ oraz zauważając, że z równości okręgu $(x-2)^2 +y^2 = 4$ mamy równanie: $x = \sqrt{4-y^2}+2$: \\ \\
+$$(1) \ \ \ \frac{1}{4}y^2 \leq x \leq \sqrt{4-y^2}+2 \ \ \ \ \ \ 0 \leq y \leq 2$$
+$$(2) \ \ \ \frac{1}{4}y^2 \leq x \leq 4 \ \ \ \ \ \ 2 \leq y \leq 4$$
+$$(3) \ \ \ \sqrt{4-y^2}+2 \leq x \leq 4 \ \ \ \ \ \ 0 \leq y \leq 2$$ \\
+Stąd mamy odpowiedź:
+$$\int_{0}^{2} \Big( \int_{\frac{1}{4}y^2}^{\sqrt{4-y^2}+2} f(x,y) \ dx \Big)\ dy + \int_{2}^{4} \Big( \int_{\frac{1}{4}y^2}^{4} f(x,y) \ dx \Big)\ dy + \int_{0}^{2} \Big( \int_{\sqrt{4-y^2}+2}^{4} f(x,y) \ dx \Big)\ dy$$
+
+
+\section*{Zadanie 2b}
+
+$$\int \int_{D} (x^2+y^2) \ dx \ dy; \ \ \ D: \ y \geq 0, \ y \leq x^2+y^2 \leq x$$ \\
+Poniżej znajduje się rysunek z widocznym obszarem $D$.
+Na początek zamieńmy x i y jako współrzędne biegunowe, czyli: $x = r \cos{\phi}, y = r \sin{\phi}$. Stąd: \\
+$$x^2+y^2 = r^2 \cos^2{\phi}+r^2 \sin^2{\phi} = r^2$$
+Podstawiając do nierówności określających nasz obszar (analizujemy tylko obszar $[0, \pi]$) $D$:
+$$r \sin{\phi} \leq r^2 \leq r \cos{\phi} \implies \sin{\phi} \leq r \leq \cos{\phi} \implies \sin{\phi} \leq \cos{\phi} \implies \phi \in [0, \frac{\pi}{4}]$$
+Z nierówności $y \geq 0$:
+$$r \sin{\phi} \geq 0 \implies \phi \in [0, \pi]$$ \\ \\
+
+\begin{wrapfigure}{}{\textwidth}
+\begin{center}
+\vspace{-5pt}
+\includegraphics[width=0.40\textwidth]e
+\end{center}
+\vspace{-10pt}
+\vspace{-10pt}
+\end{wrapfigure}
+\hfill \break
+
+Zatem obszar całkowania $\Delta$ w nowych zmiennych określony jest nierównościami $0 \leq \phi \leq \frac{\pi}{4}$, $\sin{\phi} \leq r \leq \cos{\phi}$. Tak więc, wobec wzoru na zamianę zmiennych w całce podwójnej, mamy:
+$$\int \int_{D} (x^2+y^2) \ dx \ dy = \int \int_{\Delta} r^3 d\phi \ dr = \int_{0}^{\frac{\pi}{4}} d\phi \int_{\sin{\phi}}^{\cos{\phi}} r^3 \ dr = \int_{0}^{\frac{\pi}{4}} \Big[\frac{r^4}{4}\Big]^{\cos{\phi}}_{\sin{\phi}} d\phi = $$
+$$= \int_{0}^{\frac{\pi}{4}} (\frac{\cos^4{\phi}-\sin^4{\phi}}{4}) d\phi = \frac{1}{4} \cdot \Big[\sin{\phi}\cos^3{\phi} + \frac{3}{8}(\phi - \frac{\sin{4\phi}}{4}) + \frac{\sin^3{\phi}\cos{\phi}}{4} - \frac{3}{8}(\phi - \frac{\sin{2\phi}}{2}) \Big]^{\frac{\pi}{4}}_{0} = \frac{1}{4} \cdot \frac{1}{2} = \frac{1}{8}$$
+
+\section*{Zadanie 4b}
+
+Zauważmy najpierw, że układ równań z treści zadania możemy przeobrazić równoważnie w:
+$$P1: x^2 + (y-1)^2 = 1 = 1^2 \ i \ P2: x^2 + (y-2)^2 = 4 = 2^2$$
+Stąd widzimy już, że mamy równości dwóch okręgów. Okrąg $P1$ o środku w punkcie (0,1) i promieniu długości 1 oraz P2 o środku w punkcie (0,2) i promieniu długości 2. Zatem okręgi te będą do siebie stycznie wewnętrznie. Pole obszaru ograniczonego (poprzez układ równań) to więc różnica pól: $|P1 - P2|$. Mamy:
+$$P_{P1} = \pi \cdot 1^2 = \pi \ \ \ \ P_{P2} = \pi \cdot 2^2 = 4 \pi$$ \\
+Stąd nasza odpowiedź to: $|P1 - P2| = 4\pi - \pi = 3 \pi$. \\ \\
+Treść zadania nie wymagała używania całek, a powyższy sposób jest szybki i intuicyjny. Poniżej rysunek obrazujący nasze okręgi. \\
+
+\begin{wrapfigure}{}{\textwidth}
+\begin{center}
+\vspace{-5pt}
+\includegraphics[width=0.30\textwidth]f
+\end{center}
+\vspace{-10pt}
+\vspace{-10pt}
+\end{wrapfigure}
+
+
+\end{document}

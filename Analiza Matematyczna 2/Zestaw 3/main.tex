@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[a4paper, margin={1in, 1in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{tasks}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sgn}{sgn}
+
+\let\arctan\relax
+\DeclareMathOperator{\arctan}{arctg}
+\let\tan\relax
+\DeclareMathOperator{\tan}{tg}
+
+% Dodatkowe deklaracje:
+
+% Koniec dodatkowych deklaracji
+
+\pagestyle{fancy}
+
+\lhead{Analiza Matematyczna 2; 2020/2021}
+% Tutaj proszę uzupełnić imię i nazwisko
+\rhead{Wojciech Szlosek}
+
+\begin{document}
+
+% Początek każdego zadania należy oznaczać w następujący sposób: 
+% \section*{Zadanie [nr_zadania]}
+% lub
+% \section*{Zadanie [nr_zadania][podpunkt]}
+
+\section*{Zadanie 3b}
+$$\sum_{n=1}^{\infty} n(x-2)^n$$
+Zacznijmy od obliczenia promienia zbieżności, mamy:
+$$R = \lim_{n \to \infty} |\frac{c_n}{c_{n+1}}| = \lim_{n \to \infty} |\frac{n(x-2)^n}{(n+1)(x-2)^n}| = 1$$
+Zatem z twierdzenia Cauchy`ego-Hadamarda rozważany szereg jest zbieżny dla każdego $x \in (2-1,2+1) \implies x \in (1,3)$ oraz ewentualnie na końcach tego przedziału, wcześniej należało oczywiście zauważyć, że $x_0 = 2$. \\
+Zbadajmy teraz jego zbieżność w x=1 i x=3.\\
+Dla x=1 szereg ma postać $\sum_{n=1}^{\infty} n \cdot (-1)^n$. Jest on rozbieżny, co łatwo można uzasadnić sprawdzając np. podciąg z wyrazami parzystymi i nieparzystymmi. Dla parzystych granica przy $n \to \infty$ dąży do $\infty$, z kolei dla parzystych do $-\infty$. Jest więc rozbieżny.\\ Sprawdźmy teraz dla x=3 (szereg ma postać $\sum_{n=1}^{\infty} n 1^n$) i widzimy, że tenże również jest rozbieżny.
+Ostatecznie więc przedział (1,3) jest przedziałem zbieżności badanego szeregu. (odp.)
+
+
+\section*{Zadanie 4e}
+Definiujemy $sh(x)$ jako $\frac{e^x - e^{-x}}{2}$, ponadto rozwinięcie $e^x$ w szereg Maclaurina wynosi $\sum_{n=0}^{\infty} \frac{x^n}{n!}$, gdzie $x \in R$. Dalej mamy rozwinięcia:
+$$sh(x) = \frac{1}{2} \Big(\sum_{n=0}^{\infty} \frac{x^n}{n!} - \sum_{n=0}^{\infty} \frac{(-x)^n}{n!}\Big) = \sum_{n=0}^{\infty} \frac{1}{2} (\frac{x^n}{n!} - \frac{(-1)^n x^n}{n!}) = \sum_{n=0}^{\infty} \frac{1}{2}(1-(-1)^n)\frac{x^n}{n!}$$
+Zauważmy, że dla pewnego n-parzystego $(1-(-1)^n) = 0$, z kolei dla nieparzystego (ozn. n-NP, dodatkowo: wiemy, że przyjmuje postać 2k+1, gdzie k-całkowite) $= 2$.Mamy więc:
+$$\sum_{n=0}^{\infty} \frac{1}{2}(1-(-1)^n)\frac{x^n}{n!} = \sum_{n-NP}^{\infty} \frac{1}{2} \cdot 2 \cdot \frac{x^n}{n!} = \sum_{n-NP}^{\infty} \frac{x^n}{n!} \implies \sum_{n=0}^{\infty} \frac{x^{2n+1}}{(2n+1)!}, x \in R$$
+
+
+\section*{Zadanie 5a}
+$$\sum_{n=0}^{\infty} \frac{1}{(n+1)2^n}; |x| = |\frac{1}{2}| < 1$$
+$$\sum_{n=1}^{\infty} \frac{1}{n+1}x^n = \frac{1}{x} \sum_{n=1}^{\infty} \left(  \int_{0}^{x} t^n\right) = \frac{1}{x} \cdot  \int_{0}^{x} \left(  \sum_{n=1}^{\infty} t^n\right) dt = \frac{-1}{x}\left(  \int_{0}^{x} \left( \frac{t}{t-1}\right)  dt\right)   = (*)$$
+Podstawmy, niech $u=t-1, du = dt$, musimy również zmienić granice całkowania, skoro $u = t-1$, to nowymi granicami będzie -1 oraz x-1, mamy zatem:
+$$(*) = \frac{-1}{x} ([u+ \ln|u|]_{-1}^{x-1}) = \frac{-1}{x} \cdot [x-1 + \ln|x-1|+1] = -1 - \frac{\ln|x-1|}{x}$$
+Teraz wystarczy podstawić: $x = \frac{1}{2}$. Wtedy:
+$$\sum_{n=1}^{\infty}\frac{1}{(n+1)2^{n}}=-1-2\ln\left(\frac{1}{2}\right)$$
+$$\sum_{n=0}^{\infty}\frac{1}{(n+1)2^{n}} = \sum_{n=1}^{\infty}\frac{1}{(n+1)2^{n}} + 1 = -2\ln\left(\frac{1}{2}\right) = 2\ln 2$$
+
+
+
+\end{document}

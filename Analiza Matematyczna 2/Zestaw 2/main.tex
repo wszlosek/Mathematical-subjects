@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[a4paper, margin={1in, 1in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{tasks}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sgn}{sgn}
+
+\let\arctan\relax
+\DeclareMathOperator{\arctan}{arctg}
+\let\tan\relax
+\DeclareMathOperator{\tan}{tg}
+
+% Dodatkowe deklaracje:
+
+% Koniec dodatkowych deklaracji
+
+\pagestyle{fancy}
+
+\lhead{Analiza Matematyczna 2; 2020/2021}
+% Tutaj proszę uzupełnić imię i nazwisko
+\rhead{Wojciech Szlosek}
+
+\begin{document}
+
+% Początek każdego zadania należy oznaczać w następujący sposób: 
+% \section*{Zadanie [nr_zadania]}
+% lub
+% \section*{Zadanie [nr_zadania][podpunkt]}
+
+\section*{Zadanie 2d}
+
+$$\sum_{n=1}^{\infty} \frac{1}{n \sqrt{n+1}}$$
+Niech $f(x) = \frac{1}{n \sqrt{n+1}}$. Funkcja $f$ jest malejąca na przedziale $[1, +\infty)$ !zauważmy, że przy stałym liczniku, wraz z $n$ rośnie mianownik! oraz funkcja ta przyjmuje na tym przedziale wartości dodatnie. Zbadajmy zbieżność całki $\int_{1}^{\infty} \frac{dx}{x \sqrt{x+1}}$. Mamy więc z definicji:
+$$\int_{1}^{\infty} \frac{dx}{x \sqrt{x+1}} = \lim_{T \to \infty} \int_{1}^{T} \frac{dx}{x \sqrt{x+1}} = (*)$$
+$$\int \frac{dx}{x \sqrt{x+1}} = \Big| t = \sqrt{x+1}, t^2 = x+1, 2tdt = dx \Big| = \int \frac{2t dt}{t(t^2-1)} = 2 \int \frac{dt}{t^2 - 1} = 2 \cdot \frac{1}{2} \cdot \ln \Big|\frac{t-1}{t+1}\Big| + C = \ln \Big|\frac{\sqrt{x+1}-1}{\sqrt{x+1}+1}\Big|+C$$
+
+$$(*) = \lim_{T \to \infty} \Big[ \ln \Big|\frac{\sqrt{x+1}-1}{\sqrt{x+1}+1}\Big|\Big]_{1}^{T} = \lim_{T \to \infty} \Big[ \ln \Big| \frac{\sqrt{T+1}-1}{\sqrt{T+1}+1} \Big| - \ln \frac{\sqrt{2}-1}{\sqrt{2}+1}\Big] = (**)$$
+$$\lim_{T \to \infty} \ln \Big| \frac{\sqrt{T+1}-1}{\sqrt{T+1}+1} \Big| = \ln(\lim_{T \to \infty} \frac{\sqrt{T+1}-1}{\sqrt{T+1}+1}) =^{H.} = \ln \Big(\lim_{T \to \infty} \frac{\frac{1}{2\sqrt{T+1}}}{\frac{1}{2\sqrt{T+1}}}\Big) = \ln 1 = 0$$ \\
+$$(**) = 0 - \ln \frac{\sqrt{2}-1}{\sqrt{2}+1} = - \ln \frac{\sqrt{2}-1}{\sqrt{2}+1}$$
+Oznacza to, że rozważana całka jest zbieżna, więc z kryterium całkowego wynika, że badany szereg jest zbieżny.
+
+\section*{Zadanie 3d}
+
+$$\sum_{n=1}^{\infty} \tan{\frac{\pi}{4n}}$$
+
+Wiemy, że $\tan{x} \geq x$, dla każdego $x \in (0, \frac{\pi}{2})$. Mamy więc również dla dowolnego $n$ naturalnego: 
+$$\tan{\frac{\pi}{4n}} \geq \frac{\pi}{4n}$$
+Szereg (*) = $\sum_{n=1}^{\infty} (\frac{\pi}{4n})$ jest rozbieżny (uzasadnienie poniżej) i ma nieujemne wyrazy, więc także badany szereg jest rozbieżny do $\infty$. \\ \\
+Uzasadnienie rozbieżności szeregu (*): \\
+Zbadajmy z definicji zbieżność całki $\int_{1}^{\infty} \frac{\pi dx}{4x}$:
+$$= \lim_{T \to \infty} \int_{1}^{T} (\frac{\pi}{4} \cdot \frac{dx}{x}) = \lim_{T \to \infty} \Big[ \frac{\pi}{4} \cdot \ln |x| \Big]_{1}^{T} = \lim_{T \to \infty}\Big(\frac{\pi \ln |T|}{4} - 0 \Big) = \infty$$
+
+\section*{Zadanie 4d}
+
+$$\sum_{n=1}^{\infty} \frac{n^n}{3^n \cdot n!}$$
+
+Ponieważ:
+$$\lim_{n \to \infty} \Big| \frac{a_{n+1}}{a_n} \Big| = \lim_{n \to \infty} \Bigg| \frac{ \frac{(n+1)^{n+1}}{3^{n+1} \cdot (n+1)!} }{ \frac{n^n}{3^n \cdot n!}} \Bigg| = \lim_{n \to \infty} \frac{ \frac{(n+1)^{n} \cdot (n+1)}{3^{n} \cdot 3 \cdot (n+1) \cdot n!} }{ \frac{n^n}{3^n \cdot n!}} = \lim_{n \to \infty} \frac{(n+1)^n}{3n^n} =\frac{1}{3} \lim_{n \to \infty} \Big(\frac{n+1}{n}\Big)^n = \frac{1}{3} \lim_{n \to \infty} \Big(1+ \frac{1}{n}\Big)^n = \frac{e}{3} < 1$$
+
+Zatem z kryterium d`Alemberta wynika, że badany szereg jest zbieżny.
+
+\end{document}

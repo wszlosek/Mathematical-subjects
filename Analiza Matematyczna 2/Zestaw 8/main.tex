@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[a4paper, margin={1in, 1in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{tasks}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sgn}{sgn}
+
+\let\arctan\relax
+\DeclareMathOperator{\arctan}{arctg}
+\let\tan\relax
+\DeclareMathOperator{\tan}{tg}
+
+% Dodatkowe deklaracje:
+
+% Koniec dodatkowych deklaracji
+
+\pagestyle{fancy}
+
+\lhead{Analiza Matematyczna 2; 2020/2021}
+% Tutaj proszę uzupełnić imię i nazwisko
+\rhead{Wojciech Szlosek}
+
+\begin{document}
+
+\section*{Zadanie 1c}
+
+Mamy spółczynniki kierunkowe prostych - $k: (a1, a2, a3) = (1,1,0)$ x $(0,1,1) = (1,-1,0)$, $l: (b1,b2,b3) = (1,-1,0)$ x $(0,0,1) = (-1,-1,0)$. Zauważmy, że np. punkt $P(0,1,-1)$ należy do prostek $k$, a $R(0,3,2)$ do prostej $l$. Wyznaczmy równania kierunkowe prostych:
+$$k: \frac{x-0}{1} = \frac{y-1}{-1} = \frac{z+1}{0} \ \ \ \ l: \frac{x-0}{-1} = \frac{y-3}{-1} = \frac{z-2}{0}$$
+Wektor normalny płaszczyzn: $(1,-1,0)$ x $(-1,-1,0)$ = $(0,0,-2)$
+Równania płaszczyzn zawierające dane proste:
+$$\pi_{k} = 0(x-0)+0(y-1)-2(z+1) = 0 \implies z = -1$$
+$$\pi_{l} = 0(x-0)+0(y-3)-2(z-2) = 0 \implies z = 2$$
+Stąd odległość wynosi:
+$$d = \frac{|-2-4|}{\sqrt{0^2+0^2+(-2)^2}} = 3$$
+
+\section*{Zadanie 1d}
+
+Dziedzina ($D$): $a,b,c > 0$. Wiemy, że $V = abc = 216$, stąd $c = \frac{V}{ab} = \frac{216}{ab}$. Koszt budowy określmy pewną funkcją $f$.
+$$f = 30 \cdot 2(a+b)\cdot c + 40ab + 20ab = 60V \cdot \frac{a+b}{ab}+60ab$$
+$$f^{'}_{a} = \frac{-60V}{a^2}+60b \ \ \ \ f^{'}_{b} = \frac{-60V}{b^2}+60a$$
+Przyrównując pochodne przy odpowiednich zmiennych do zera, mamy:
+$$\frac{-60V}{a^2}+60b = 0 \implies V = a^2b$$
+$$\frac{-60V}{b^2}+60a = 0 \implies V = ab^2$$
+Stąd mamy, że $a = b = 216^{\frac{1}{3}} = 6$ m. \\
+Obliczając drugie pochodne, a następnie podkładając te do wiadomego wyznacznika, mamy, że $W(6,6) = 120 \cdot 120 - (60 \cdot 60) > 0$. A zatem rzeczywiście jest tam ekstremum (powiem więcej: minimum lokalne) Pora na krótkie uzasadnienie globalności. Zbadajmy zachowanie się funkcji kiedyż punkt $(x,y) \in D$ dąży do brzegu obszaru D. Mamy więc dwie (analogiczne) granice, które (jak się okazuje, podstawiając do nich nasze dane) dążą do nieskończoności. Stąd uzasadnienie globalności. \\ \\
+Ze wzoru na $c$, mamy, że również i $c = 6$ m. \\
+Odpowiedź: a = b = c = 6 m.
+
+
+\section*{Zadanie 2a}
+$$f(x,y) = x^3+x-y^3-y = 0, \ \ \ \ (2,2)$$
+Równanie stycznej do krzywej w punkcie $(x_0,y_0)$ ma postać: 
+$$y-y_0 = - \frac{\frac{\partial f}{\partial x}(x_0,y_0)}{\frac{\partial f}{\partial y}(x_0,y_0)}(x-x_0)$$
+Obliczamy:
+$$\frac{\partial f}{\partial x} = 3x^2+1 \ \ \ \ \frac{\partial f}{\partial x} (2,2) = 13$$
+$$\frac{\partial f}{\partial y} = -3y^2-1 \ \ \ \ \frac{\partial f}{\partial y} (2,2) = -13$$
+Zatem, podstawiając do wzoru, mamy odpowiedź, że równanie ma postać:
+$$y-2 = - \frac{13}{-13}(x-2) \implies y = x$$
+
+\end{document}
