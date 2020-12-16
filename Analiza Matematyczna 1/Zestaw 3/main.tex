@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{AM1 - Zestaw 3}
+\author{Wojciech Szlosek}
+\date{March 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Zadanie 1, b)} 
+
+$$\lim_{x \to \infty}({3}^{-x}+1) = 1 $$ 
+\newline
+Mamy pokazać, że: \newline
+
+$ \bigwedge_{x_{n}}$ $[( \lim_{n \to \infty} x_{n} = \infty ) \Rightarrow$ $(\lim_{n \to \infty} (3^{-x_{n}}+ 1) = 1)]$ \newline \newline
+Niech $x_{n}$ będzie dowolnym ciągiem spełniającym warunek: $\lim_{x \to \infty} = \infty $. Wówczas: 
+
+$$ \lim_{n \to \infty} (3^{-x_{n}}+ 1) = \lim_{n \to \infty} ({(\frac{1}{3})}^{x_{n}} + 1) = \lim_{n \to \infty} ({(\frac{1}{3}}^{\infty} + 1) = 0 + 1 = 1 $$
+
+\section{Zadanie 6, c)}
+ 
+ $$\lim_{x \to \infty} 2^{x}(2+\cos x) = \infty$$ \newline
+
+        Zauważmy, że skoro $\cos x \in [-1, 1]$, to: \newline \newline
+        $$2^x(2+\cos x) \ge 2^x$$ \newline
+        
+        Widzimy, że prawa strona (ograniczenie dolne) tejże nierówności dąży do $\infty$.
+        Zatem z twierdzenia o dwóch funkcjach, $2^{x}(2+\cos x) $ również dąży do $\infty$. Więc rzeczywiście $$\lim_{x \to \infty} 2^{x}(2+\cos x) = \infty$$. \newline
+        Co nakazano dowieść.
+        
+\section{Zadanie 7, k)}
+
+$$\lim_{x \to 0} \frac{\ln(1+\sqrt[3]{x})}{x} = \lim_{x \to 0} (\frac{\ln(1+\sqrt[3]{x})}{\sqrt[3]{x}} \cdot \frac{\sqrt[3]{x}}{x}) = \lim_{x \to 0} (\frac{\ln(1+\sqrt[3]{x})}{\sqrt[3]{x}} \cdot \frac{1}{\sqrt[3]{x^{2}}}) = 1 \cdot \infty = \infty $$ \newline
+
+W trakcie rozwiązania wykorzystałem własność: \newline
+
+$\lim_{u \to 0} {\frac{\ln(1+u)}{u}} = 1$
+
+\end{document}

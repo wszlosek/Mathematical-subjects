@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{AM - Zestaw 5}
+\author{Wojciech Szlosek}
+\date{March 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Zadanie 1}
+
+\subsection{a)}
+
+$f(x) = |x-1|, x_{0} = 1$
+$$f^{'}(1) = \lim_{x \to 1} \frac{f(x)-f(1)}{x-1} = \lim_{x \to 1} \frac{|x-1|-0}{x-1}$$
+$$\lim_{x \to 1^{+}}\frac{|x-1|}{x-1}=1$$
+$$\lim_{x \to 1^{-}}\frac{|x-1|}{x-1}=-1$$
+$$1 \neq -1$$
+(Odp.) Nie istnieje pochodna tej funkcji w $x_{0}$.
+
+\section{Zadanie 3}
+
+\subsection{c)}
+
+$h(x) = |\sin{x}|, x_{0} = \pi$
+$$h^{'}_{-}(\pi) = \lim_{x \to \pi^{-}}\frac{h(x)-h(\pi)}{x-\pi} = \lim_{x \to \pi^{-}}\frac{|\sin{x}|-|\sin{\pi}|}{x-\pi} = \lim_{x \to \pi^{-}}\frac{\sin{x}}{x-\pi} = \lim_{x \to \pi^{-}}\cos{x} = -1$$
+$$h^{'}_{+}(\pi) = \lim_{x \to \pi^{+}}\frac{h(x)-h(\pi)}{x-\pi} = \lim_{x \to \pi^{+}}\frac{|\sin{x}|-0}{x-\pi} = \lim_{x \to \pi^{+}}\frac{-\sin{x}}{x-\pi} = -\lim_{x \to \pi^{+}}\cos{x} = -(-1) = 1$$
+$$-1 \neq 1$$
+(Odp.) Nie istnieje $h^{`}(\pi)$.
+
+\subsection{Zadanie 7}
+
+\subsection{b)}
+$$(f^{-1})(e+1); f(x) = x + \ln{x}$$
+Funkcja jest ciągła i rosnąca w zbiorze liczb rzeczywistych. Ponadto $f(e) = 1 + e$. Zatem argument $x = e$ tejże funkcji jest jedynym rozwiązaniem równania $x + \ln{x} = 1 + e$. Funkcja spełnia założenia twierdzenia o pochodnej funkcji odwrotnej, zatem: \newline
+$$(f^{-1})^{'}(e+1) = \frac{1}{f^{'}(e)} = \frac{1}{(x+\ln{x})^{'}}_{x=e} = \frac{1}{1+\frac{1}{e}} = \frac{e}{e+1}$$
+
+\end{document}

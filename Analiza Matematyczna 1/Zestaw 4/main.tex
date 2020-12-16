@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{AM1 - Zestaw 4}
+\author{Wojciech Szlosek}
+\date{March 2020}
+\begin{document}
+\maketitle
+
+\section{Zadanie 3}
+\subsection{a)}
+
+$f(x)=\left\{ \begin{array}{rl}
+bx & \textrm{dla $x<\pi$} \\ \frac{sin{x}}{ax} & \textrm{dla $x\geq\pi$} \end{array}$ x_{0} = \pi\right.$ \newline
+
+Funkcja f jest ciągła lewostronnie w punkcie $x_{0}$ (funkcja liniowa w przedziale $(-\infty,\pi)$. Mamy:
+$$ \lim_{x \to \pi^{+}} f(x) = \frac{1}{a},$$ gdzie $a\neq0$. Ponadto $f(\pi) = 0 \Rightarrow \lim_{x \to {\frac{\pi}{2}}^{-}} = 0 = b$ \newline \newline
+(odp.) $ b = 0$, $ a \neq 0$
+
+\section{Zadanie 5}
+\subsection{a)}
+$$f(x) = sqn[x(x-1)], x_{0} = 1$$
+$$f(x)=\left \{ \begin{array}{rl}
+-1 & \textrm{ $x<0 \wedge x>1$} \\ 0 & \textrm{dla $x = 0 \vee x = 1$} \\ 1 & \textrm{dla $0<x<1$} \end{array}$$ \newline
+$$ \lim_{x \to 1^{+}} f(x) = -1$$ \newline
+$$ \lim_{x \to 1^{-}} f(x) = 1$$ \newline
+$$ \lim_{x \to 1^{+}} f(x) \neq \lim_{x \to 1^{-}} f(x)$$ \newline \newline
+$(odp.) Jest to nieciągłość pierwszego rodzaju typu "skok".
+
+\section{Zadanie 7}
+\subsection{b)}
+Niech bok podstawy tego graniastosłupa ma dodatnią długość $a$, z kolei jego wysokość ma długość $H$. \newline
+Z twierdzenia Pitagorasa dla granistosłupa prawidłowego sześciokątnego wpisanego w kulę o promieniu R mamy:
+$(2a)^{2} + H^{2} = (2R)^{2}$ Z czego dalej po przekształceniu mamy, że: $H = 2\sqrt{R^{2}-a^{2}}$, gdzie $0<a<R$. \newline
+Wzór na objętość tego graniastosłupa to: $V(a) = \frac{3Ha^{2}\sqrt{3}}{2} = 3a^{2}\sqrt{3R^{2}-3a^{2}}$ \newline
+Zauważmy, że $V(0) = V(R) = 0$. Otrzymaliśmy więc funkcję ciągłą na przedziale $[0, R]$. \newline \newline Z twierdzenia Weierstrassa wynika, że w pewnym punkcie przedziału domkniętego $[0, R]$ funkcja V osiąga wartość największą. Ponieważ na krańcach tegoż przedziału przyjmuje wartość 0, a w jego wnętrzu wartości dodatnie, to jej wartość największa jest osiągana w punkcie przedziału $(0, R)$. \newline
+Co nakazano dowieść.
+
+\end{document}

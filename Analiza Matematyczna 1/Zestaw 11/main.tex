@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\title{AM1 - Zestaw 11}
+\author{Wojciech Szlosek}
+\date{May 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Zadanie 1, (h)}
+
+$$\int \frac{2x^4 + 5x^2 -2}{2x^3 - x - 1}dx = \int x dx + \int \frac{6x^2 + x - 2}{2x^3 -x -1}dx$$ \newline
+
+Podzielmy sobie rozwiązanie na mniejsze składowe.
+
+$$\int x dx = \frac{x^2}{2}$$
+$$\int \frac{6x^2 +x -2}{2x^3 -x -1}dx = \int \frac{4x+3}{2x^2+2x+1}dx + \int \frac{1}{x-1}dx$$
+
+$$\int \frac{1}{x-1}dx = ln|x-1|$$
+$$\int \frac{4x+3}{2x^2 +2x+1}dx = 2\int \frac{2x+1}{2x^2 +2x+1}dx + \int \frac{1}{2x^2 +2x+1}dx$$ \newline
+
+Niech $t = 2x^2 + 2x +1$, $dx = \frac{1}{4x+2}dt$
+$$\int \frac{2x+1}{2x^2+2x+1}dx = \frac{1}{2} \int \frac{1}{t}dt = \frac{ln t}{2} = \frac{ln(2x^2 + 2x +1}{2}$$ \newline
+
+Niech $t = 2x+1$, $dx = \frac{1}{2}dt$
+$$\frac{1}{2x^2 +2x+1}dx = \int \frac{1}{t^2+1}dt = arctg(t) = arctg(2x+1)$$
+
+Stąd:
+$$\int \frac{4x+3}{2x^2+2x+1}dx = ln(2x^2 +2x+1)+arctg(2x+1)$$ \newline
+
+Wreszcie podsumujmy: 
+
+$$\int \frac{2x^4+5x^2-2}{2x^3-x-1}dx = \frac{x^2}{2}+ln|x-1| + ln(2x^2 +2x+1) + arctg(2x+1)$$
+
+
+\section{Zadanie 2, (d)}
+
+Istnieje wzór: $\int cos^{n}(x) dx = \frac{n-1}{n}\int cos^{n-2}(x)dx+\frac{cos^{n-1}(x)sin(x)}{n}$, skorzystamy z niego. 
+
+$$\int cos^{4}(x) dx = \frac{3}{4}cos^{2}(x)dx + \frac{cos^{3}xsinx}{4}$$
+$$\int cos^{2}x dx = \frac{cosxsinx}{2} + \frac{x}{2}$$ 
+
+$$\int cos^4(x) dx = \frac{cos^{3}xsinx}{4}+\frac{3cosxsinx}{8}+\frac{3x}{8}+C = \frac{3}{8}x+\frac{1}{4}sin(2x)+\frac{1}{32}sin(4x)+C$$
+
+\section{Zadanie 3, (c)}
+
+$$\int \sqrt{x^2 -36} dx$$
+Niech $x = 6ch(t)$, $dx = 6sh(t)dt$, $t = acosh(\frac{x}{6})$ \newline
+
+$$\sqrt{x^2 -36} = \sqrt{36ch^{2}(t) -36} = 6\sqrt{sh^{2}(t)} = 6 |sh (t)| = 6sh(t)$$
+
+$$\int \sqrt{x^{2}-36}dx = 36\int sh^{2}(t) dt = 18 \int ch(2t-1) dt = -18 \int 1dt + 18\int ch(2t) dt $$
+$$ = -18t + 9sh(2t) = \frac{x}{2}\sqrt{x-6}\sqrt{x+6} - 18\ln|x+\sqrt{x^2-36}| = \frac{x\sqrt{x^2 -36}}{2}-18 \ln|x+\sqrt{x^2 -36}|+C$$
+
+\end{document}

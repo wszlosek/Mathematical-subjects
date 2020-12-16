@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{AM1 - Zestaw 8}
+\author{Wojciech Szlosek}
+\date{April 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Zadanie 1, (b)}
+
+Aby oszacować dokładność podanego wzoru, wykorzystamy wzór Maclaurina dla funkcji $f(x) = cos^{2}x$. $f^{'} (x) = -2sinxcosx$; $f^{''} (x) = 4sin^2 x - 2$; $f^{'''}(x) = 8sinxcosx$; $f^{''''}(x) = 16cos^{2}x - 8$. Stąd: $f(0) = 1$; $f^{'} (0) = 0$; $f^{''} (0) = -2$; $f^{'''}(0) = 0$; $f^{''''}(0) = 8$.
+\newline
+Zatem:
+$$cos^{2}x \approx 1+0+\frac{-2x^2}{2!}+0+\frac{8x^4}{4!} \approx 1-x^2+R_3$$
+Skoro $|x| \leq \frac{1}{10}$, 
+
+$$|R_3| \leq \frac{x^4}{3}$$
+$$|R_3| \leq \frac{(0.1)^4}{3} \approx 0.0000333...$$
+
+(Odp.) Błąd jest zatem mniejszy od $\frac{1}{30000} \approx 0.0000333...$
+
+\section{Zadanie 4, (e)}
+
+$q(x) = \frac{(x+3)^3}{(x+1)^2}$ \newline
+
+$q^{'}(x) = \frac{x^3 +3x^2 -9x -27}{x^3 +3x^2 +3x +1}$ \newline
+
+Ponieważ badana funkcja ma pochodną w każdym punkcie, więc może mieć ekstrema jedynie w punktach, gdzie $g^{'}(x) = 0$, czyli w x = -3 lub x = 3. Teraz pora na zbadanie znaku pochodnej na konkretnych przedziałach. Łatwo sprawdzić, że funkcja zmienia znak z ujemnego na dodatni w punkcie 3. Dlaczego? Zauważmy, że w przedziale (0,3) funkcja ma wartości ujemne, a w $(3, \infty)$ - dodatnie. Zatem w tymże punkcie 3, funkcja q ma minimum lokalne właściwe, który wynosi $q(3) = 13.5$ (odp.)
+
+\section{Zadanie 6, (c)}
+
+$h(x) = tg x$, $h^{''}(x) = \frac{2sinx}{cos^3 x}$
+\newline
+
+Niech $k$ będzie liczbą całkowitą. Pochodna drugiego stopnia funkcji h jest większa od zera dla x należącego do przedziału $(k\pi, \frac{\pi}{2}+k\pi)$. Z kolei jest mniejsza od zera dla x należącego do: $(\frac{-\pi}{2}+k\pi,2k\pi)$. 
+\newline
+Łatwo zauważyć, że punktem przegięcia tej funkcji jest $x = k\pi$ (odp.)
+
+
+\end{document}
