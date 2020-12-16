@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsmath}
+ \usepackage{amssymb}
+
+\title{Algebra 2 - Zestaw 9}
+\author{Wojciech Szlosek}
+\date{April 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Zadanie 1}
+
+\subsection{(a)}
+Oznaczmy wektor przez $x$. \newline
+$x = (-1,1,2,-3)$ \newline
+$$|x| = \sqrt{(x,x)} = \sqrt{(-1)^{2} +1^{2}+2^{2}+(-3)^{2}} = \sqrt{15}$$
+
+\subsection{(b)}
+
+$x, y$ - wektory \newline
+$x = (1,4,-1,2)$; $y = (3,-1,2,-1)$ 
+$$(x,y) = 3-4-2-2 = -5 \neq 0$$
+(odp.) Wektory nie są więc ortogonalne.
+
+\section{Zadanie 1, (c)}
+$x,y$ - wektory
+$|x|^{2} = 1+9+1=11$; $|y|^{2}=9+1+1 = 11$ \newline
+$$cos \measuredangle(x,y) = \frac{(x,y)}{|x||y|} = \frac{6}{11}$$
+
+\subsection{(e)}
+$x,y$ - wektory \newline
+$y = (1,2,0,-2)$; $\cos{\frac{2\pi}{3}}= -\frac{1}{2}$ \newline
+Niech $x = (a,b,c,d)$ będzie szukanym wektorem. Wówczas mamy: $a^2 +b^2 + c^2 + d^2 = 1$ (1) oraz:
+
+$$\cos \measuredangle(x,y)= \frac{a+2b-2d}{3} = -\frac{1}{2}$$
+Przykładowo można przyjąć zatem, że $a=-\frac{1}{2}$, $b=-\frac{1}{4}$, $d = \frac{1}{4}$, oraz z warunku (1): $c=\sqrt{\frac{5}{8}}$ \newline
+(Odp.) $x = (-\frac{1}{2}, -\frac{1}{4}, \sqrt{\frac{5}{8}}, \frac{1}{4})$
+
+\section{Zadanie 2, (a)}
+$p_0 = x+1; q_0 = x-2$ \newline
+$$(p,q)=p(1)q(1)+p(2)q(2)+p(3)q(3)$$
+$$|p_0 |^2 = 2^2 +3^2 + 4^2 = 29$$
+$$|q_0|^2 = (-1)^2 + 0 + 1^2 = 2$$
+$$\cos \measuredangle (p_0, q_0) = \frac{-2+0+4}{\sqrt{29} \sqrt{2}} = \sqrt{\frac{2}{29}}$$
+(Odp.) arccos$(\sqrt{\frac{2}{29}})$
+
+\section{Zadanie 2, (b)}
+$p_0 = x+1; q_0 = x-2$ \newline
+$$(p,q)=p(0)q(0)+p^{'}(0)q^{'}(0)+p^{''}(0)q^{''}(0)$$
+
+$$|p_0|^2 = 1^2 +1^2 + 0 = 2$$
+$$|q_0|^2 = (-2)^2 + 1^2 + 0 = 5$$
+$$\cos \measuredangle(p_0 ,q_0) = \frac{-2+1+0}{\sqrt{2} \sqrt{5}} = -\sqrt{\frac{1}{10}}$$
+(Odp.) arccos$(-\sqrt{\frac{1}{10}})$
+
+\end{document}
