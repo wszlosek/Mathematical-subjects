@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{AM1 - Zestaw 6}
+\author{Wojciech Szlosek}
+\date{March 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Zadanie 2}
+\subsection{(c)}
+
+$$f(x) = e^{ax}$$
+$$g(x) = e^{-x}$$
+
+Najpierw poszukajmy punktu, w którym przecinają się wykresy powyższych funkcji: $e^{ax} = e^{-x} \Rightarrow x(a+1) = 0$. Zatem $\underline{x = 0}$ lub $a = -1$, jednakże w tym drugim przypadku otrzymamy dwie funkcje przystające. Ażeby funkcje przecinały się pod kątem prostym, musi zachodzić ($x_{0}$ jest odciętą punktu przecięcia wykresów):
+$$1+f^{'}(x_{0})g^{'}(x_{0}) = 0$$
+
+$$f^{'}(x_{0}) = (e^{ax})^{'}_{x=0} = a \cdot e^{ax}_{x=0} = a$$
+$$g^{'}(x_{0}) = e^{-x}_{x=0} = -1$$
+
+$$1+f^{'}(x_{0})g^{'}(x_{0}) = 0$$
+$$1 - a = 0 \Rightarrow \underline{a = 1}$$
+
+\section{Zadanie 3}
+\subsection{(c)}
+
+$$\arcsin{0.51} = ?$$
+Niech $f(x) = \arcsin{x}$; $x_{0} = 0.50$; $\Delta x = 0.01$. \newline Wiemy ponadto, że zachodzi wzór: $(\arcsin{x})^{'} = \frac{1}{\sqrt{1-x^{2}}}$ Wówczas:
+
+$$\arcsin{0.51} \approx \arcsin{0.50} + [\arcsin{x}]^{'}_{x=0.50} \cdot 0.01 = \frac{\pi}{6} + \frac{1}{\frac{\sqrt{3}}{2}} \cdot \frac{1}{100} = \frac{\pi}{6} + \frac{\sqrt{3}}{150} = \frac{25\pi + \sqrt{3}}{150} \approx \underline{0.53515}$$
+
+
+\section{Zadanie 6}
+\subsection{(a) Zbadać czy istnieje $f^{''}(0)$:}
+
+
+$$f(x)=\left\{ \begin{array}{rl}
+-x^{2} & \textrm{dla $x<0$} \\ x^{3} & \textrm{dla $x = 0$} \\ x^{3} & \textrm{dla $x>0$} \end{array}$$
+
+$$(-x^{2})^{'} = -2x$$
+$$(x^{3})^{'} = 3x^{2}$$
+
+$$f^{'}_{-}(0) = \lim_{x \to 0_{-}} \frac{f(x) - f(0)}{x-0} =  \lim_{x \to 0_{-}} \frac{-x^{2}-0}{x} = 0$$
+$$f^{'}_{+}(0) = \lim_{x \to 0_{+}} \frac{f(x) - f(0)}{x-0} =  \lim_{x \to 0_{+}} \frac{x^{3}-0}{x} = 0$$
+
+Stąd $f^{'}(0) = 0$. Mamy zatem:
+
+$$f^{'}(x)=\left\{ \begin{array}{rl}
+-2x & \textrm{dla $x<0$} \\ 0 & \textrm{dla $x = 0$} \\ 3x^{2} & \textrm{dla $x>0$} \end{array}$$
+
+$$f^{''}_{-}(0) = \lim_{x \to 0_{-}} \frac{f(x) - f(0)}{x-0} =  \lim_{x \to 0_{-}} \frac{-2x}{x} = -2$$
+$$f^{''}_{+}(0) = \lim_{x \to 0_{+}} \frac{f(x) - f(0)}{x-0} =  \lim_{x \to 0_{+}} \frac{3x^{2}}{x} = 0$$
+$$-2 \neq 0$$
+
+\centering
+(odp.) Zatem nie istnieje $f^{''}(0)$.
+
+\end{document}

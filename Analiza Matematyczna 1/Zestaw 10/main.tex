@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\title{AM1 - Zestaw 10}
+\author{Wojciech Szlosek}
+\date{April 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Zadanie 2, (d)}
+
+$f(x) = x$, $f^{'} (x) = 1$ \newline
+$g^{'}(x) = \frac{1}{cos^2 x}$, $g(x) = tg x$\newline \newline
+$$\int \frac{xdx}{cos^2 x} = xtg x + \int -tg x dx = xtg x + \int \frac{sinx}{cosx} dx = xtgx + ln|cos x| + C$$
+
+\section{Zadanie 3, (j)}
+
+$$w = \int \frac{dx}{\sqrt{4x-x^2}} = \int \frac{1}{\sqrt{-(x-2)^{2}+4}} dx$$
+
+Niech $t = x - 2$, wówczas:
+
+$$w = \int \frac{1}{-t^{2}+4} dx = arcsin(\frac{t}{2}) = arcsin(\frac{x-2}{2})+C$$
+
+\section{Zadanie 4, (b)}
+
+$$\int e^{|x|} dx$$
+
+Zauważmy najpierw, że funkcja $e^{|x|}$ jest ciągła na zbiorze liczb rzeczywistych, zatem istnieje na nim całka nieoznaczona. Obliczymy ją na każdym z przedziałów: $(-\infty, 0]$, $[0, +\infty$. \newline \newline
+Dla $x \leq 0$ mamy: 
+$$\int e^{-x} dx = -\int e^{-x} dx = -e^{-x} + C_1$$
+Dla $0 \leq x$ mamy:
+$$\int e^{x} dx = e^{x} + C_2$$
+
+Całka nieoznaczona jest funkcją ciągła na zbiorze rzeczywistym. Stałe $C_1$ i $C_2$ należy dobrać w ten sposób, by funkcja $F$ była ciągła w punkcie $x = 0$, gdzie: 
+$$F(x) = \left\{ \begin{array}{rl}
+-e^{-x} + C_1 & \textrm{dla x\leq 0  $}  \\ e^{x}+C_2 & \textrm{dla $x>0$} \end{array}$$
+
+Zauważmy, że z jednej strony $F(0) = -1 + C_1$, a z drugiej $F(0) = 1 + C_2$, z tego zaś wychodzi, że $C_2 = C_1 - 2$. Ponadto niech $C_1 = C$. Ostatecznie mamy więc:
+
+$$ \int e^{|x|} dx = \left\{ \begin{array}{rl}
+-e^{-x} + C & \textrm{dla x\leq 0  $}  \\ e^{x}-2+C & \textrm{dla $x>0$} \end{array}$$
+\end{document}
