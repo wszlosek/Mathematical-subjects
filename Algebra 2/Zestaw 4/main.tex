@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Algebra 2 - Zestaw 4}
+\author{Wojciech Szlosek}
+\date{March 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Zadanie 2}
+
+\subsection{a)}
+
+W tym zadaniu skorzystamy z twierdzenia, które mówi, że suma wymiarów jądra i obrazu przekształcenia liniowego $L: U \to V$ przestrzeni skończenie wymiarowych jest równa wymiarowi przestrzeni $U$. \newline 
+
+$$L(x, y, z, t) = (x+y+z-t, 2x+y-z+t, y+3z-3t)$$ \\
+$ Im L = lin \{ (1,2,0), (1,1,1), (1,-1,3), (-1,1,-3)\}$ \\ \newline \newline
+$dim(Im L) = rz \left[\begin{array}{cccc}
+1 & 1 & 1 & -1 \\
+2 & 1 & -1 & 1 \\
+0 & 1 & 3 & -3 \end{array}\right] = rz \left[\begin{array}{cccc}
+1 & 1 & 1 & -1 \\
+2 & 1 & -1 & 1 \\
+0 & 0 & 0 & 0 \end{array}\right] = 2$ \newline \newline \\
+$dim(Ker L) = 4 - dim(Im L) = 4 - 2 = 2$
+\newline \newline
+$$(odp.)$$ $$ dim(Im L) = dim(Ker L) = 2$$
+
+\subsection{b)}
+
+W tym zadaniu skorzystamy z twierdzenia, które mówi, że suma wymiarów jądra i obrazu przekształcenia liniowego $L: U \to V$ przestrzeni skończenie wymiarowych jest równa wymiarowi przestrzeni $U$. \newline 
+
+$$L(x, y, z, s, t) = (x+y+z, y+z+s, z+s+t)$$ \\
+$ Im L = lin \{ (1,0,0), (1,1,0), (1,1,1), (0,1,1),(0,0,1)\}$ \\ \newline \newline
+$dim(Im L) = rz \left[\begin{array}{ccccc}
+1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1 & 1 \end{array}\right] = 3$, ponieważ $det \left[\begin{array}{ccccc}
+1 & 1 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 1 \end{array}\right] = 3$\newline \newline \\
+$dim(Ker L) = 5 - dim(Im L) = 5 - 3 = 2$
+\newline \newline
+$$(odp.)$$ $$ dim(Im L) = 3$$  $$ dim(Ker L) = 2$$
+
+\section{Zadanie 3}
+
+\subsection{a)}
+$$L(x,y,z) = (x+y, x+z, y-z, y+2z)$$ \newline
+
+Obrazy kolejnych wektorów bazy standardowej $(e_{1}, e_{2}, e_{3})$ są następujące: \newline
+$ \\
+ L(e_{1}) = (1, 1, 0, 0) \\
+ L(e_{2}) = (1, 0, 1, 1) \\
+ L(e_{3}) = (0, 1, -1, 2) $ \newline
+ 
+ Wynika stąd, że: \newline
+ 
+(odp.) $ A_{l} = \left[\begin{array}{ccc}
+1 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & -1 \\
+0 & 1 & 2 \end{array}\right].$ \newline
+
+\subsection{b)}
+
+$$L(x,y,z) = (4x+3y, x-2y, 3x+5y)$$ 
+
+Obrazy kolejnych wektorów bazy standardowej $(e_{1}, e_{2}) $ są następujące: \newline
+$ \\
+ L(e_{1}) = (4, 1, 3) \\
+ L(e_{2}) = (3, -2, 5) $ \newline
+ 
+ Wynika stąd, że: \newline
+ 
+ (odp.) $A_{l} = \left[\begin{array}{cc}
+4 & 3 \\
+1 & -2 \\
+3 & 5 \end{array}\right].$ \newline
+
+\section{Zadanie 4 z zestawu 3}
+$$L(2,1,1) = (4,5) $$
+$$L(1,-3,2) = (-6,1)$$\newline
+$L(5,6,1) = L(3 \cdot (2,1,1) - (1,-3,2)) = 3L(2,1,1)-L(1,-3,2) = 3 \cdot (4,5) - (-6,1) = \underline{(18,4)} $\newline
+$$L(4,1,5) = a(2,1,1)+b(1,-3,2)$$
+$$2a+b = 4 \wedge a-3b = 1 \wedge a+2b=5$$
+Zatem $a=1+3b \wedge b= \frac{2}{7} \wedge b=\frac{4}{5}$, co jest sprzecznością. Odp.: Nie można.
+
+\end{document}
